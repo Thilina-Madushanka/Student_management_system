@@ -1,0 +1,15 @@
+server:
+  port: 8081   # Application server port
+
+spring:
+  application:
+    name: studentManagementSystem2025  # Name of the application
+  datasource:
+    url: jdbc:mysql://localhost:3306/studentmanagementsystems1   # Database URL
+    username: root                        # Database username
+    password: 19970521                    # Database password
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Database driver
+  jpa:
+    hibernate:
+      ddl-auto: create    # Hibernate settings
+    show-sql: true        # Show SQL statements
