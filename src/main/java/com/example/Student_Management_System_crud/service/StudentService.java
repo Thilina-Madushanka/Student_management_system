@@ -55,6 +55,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         if(!studentRepository.existsById(id)){
             throw new StudentNotFoundException("sorry, this student not found");
         }
+        studentRepository.deleteById(id);
     }
 
     private boolean studentAlreadyExists(String email) {
