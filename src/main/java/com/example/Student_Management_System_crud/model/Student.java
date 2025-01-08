@@ -7,20 +7,62 @@ import jakarta.persistence.Id;
 import lombok.*;
 import org.hibernate.annotations.NaturalId;
 
+
 @Entity
-@Setter
-@Getter@AllArgsConstructor
-@NoArgsConstructor
-@Data
+//@Setter  // Lombok will generate getters, setters, toString, equals, and hashCode
+//@Getter
+@Data // Generates getters, setters, toString, equals, and hashCode methods
+@AllArgsConstructor // Generates a constructor with all fields as parameters
+@NoArgsConstructor  // Generates a no-args constructor
+
 public class Student {
     @Id //make id primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //make id auto generate
-    private int id;
+    private Integer id;
     private String firstName;
     private String lastName;
     @NaturalId(mutable = true) //same email does not exists
     private String email;
     private String department;
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    public Integer getId() {
+        return id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
 
 
 }

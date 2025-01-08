@@ -9,10 +9,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service //need to specify to service class
-@RequiredArgsConstructor //inject dependencies to constructor
-public class StudentService implements IStudentService{
-    private final StudentRepository studentRepository;
+//@RequiredArgsConstructor //inject dependencies to
 
+public class StudentService implements IStudentService{ //use codeline to @RequiredArgsConstructor
+    private final StudentRepository studentRepository; //use codeline to @RequiredArgsConstructor
+    public StudentService(StudentRepository studentRepository) { //manually initialize repository
+        this.studentRepository = studentRepository;
+    }
     @Override
     public List<Student> getStudents() {
         return studentRepository.findAll();
