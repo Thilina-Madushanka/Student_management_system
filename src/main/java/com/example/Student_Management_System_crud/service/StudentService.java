@@ -11,11 +11,15 @@ import java.util.List;
 @Service //need to specify to service class
 //@RequiredArgsConstructor //inject dependencies to
 
-public class StudentService implements IStudentService{ //use codeline to @RequiredArgsConstructor
-    private final StudentRepository studentRepository; //use codeline to @RequiredArgsConstructor
+public class StudentService implements IStudentService{ //use code to @RequiredArgsConstructor
+    private final StudentRepository studentRepository; //use code to @RequiredArgsConstructor
     public StudentService(StudentRepository studentRepository) { //manually initialize repository
         this.studentRepository = studentRepository;
     }
+
+//    public StudentNotFoundException studentNotFoundException;
+//    public StudentAlreadyExistsException studentAlreadyExistsException;
+
     @Override
     public List<Student> getStudents() {
         return studentRepository.findAll();
