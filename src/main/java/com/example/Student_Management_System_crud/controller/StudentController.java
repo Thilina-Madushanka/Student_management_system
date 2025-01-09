@@ -10,14 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("/students")
 //@RequiredArgsConstructor-to inject we use lombok -> need to use final keyword to class
 public class StudentController {
 //    private final IStudentService studentService; //inject through the constructor -> need to use final
 @Autowired
-private StudentService studentService;
+private IStudentService studentService;
 //@RequiredArgsConstructor
 //private final IStudentService studentService;
     @GetMapping
