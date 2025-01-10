@@ -12,13 +12,11 @@ import java.util.List;
 //@RequiredArgsConstructor //inject dependencies to
 
 public class StudentService implements IStudentService{ //use code to @RequiredArgsConstructor
-    private final StudentRepository studentRepository; //use code to @RequiredArgsConstructor
+    private final StudentRepository studentRepository; //get students from repository -> use @RequiredArgsConstructor
+// constructor inject
     public StudentService(StudentRepository studentRepository) { //manually initialize repository
         this.studentRepository = studentRepository;
     }
-
-//    public StudentNotFoundException studentNotFoundException;
-//    public StudentAlreadyExistsException studentAlreadyExistsException;
 
     @Override
     public List<Student> getStudents() {

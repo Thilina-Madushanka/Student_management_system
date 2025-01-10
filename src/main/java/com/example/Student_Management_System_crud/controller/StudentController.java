@@ -15,8 +15,8 @@ import java.util.List;
 @RequestMapping("/students")
 //@RequiredArgsConstructor-to inject we use lombok -> need to use final keyword to class
 public class StudentController {
-//    private final IStudentService studentService; //inject through the constructor -> need to use final
-@Autowired
+//    private final IStudentService studentService; //inject through the constructor -> need to use final keyword -> comming from //@RequiredArgsConstructor
+@Autowired //exists @RequiredArgsConstructor
 private IStudentService studentService;
 //@RequiredArgsConstructor
 //private final IStudentService studentService;
