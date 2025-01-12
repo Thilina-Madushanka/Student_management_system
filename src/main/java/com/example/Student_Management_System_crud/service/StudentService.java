@@ -23,6 +23,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         return studentRepository.findAll();
     }
 
+    //add student
     @Override
     public Student addStudent(Student student) {
         if(studentAlreadyExists(student.getEmail())){
@@ -48,7 +49,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         return studentRepository.findById(id)
                 .orElseThrow(()->new StudentNotFoundException("sorry student not found within this id! :" + id));
     }
-
+    //delete student
     @Override
     public void deleteStudent(Integer id) {
         if(!studentRepository.existsById(id)){
