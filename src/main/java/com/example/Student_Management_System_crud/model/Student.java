@@ -25,6 +25,10 @@ public class Student {
     private String email;
     private String department;
 
+    public String getFormattedId() {
+        return id != null ? String.format("%03d", id) : null;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
@@ -63,6 +67,7 @@ public class Student {
     public String getDepartment() {
         return department;
     }
+
 
 
 }

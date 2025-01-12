@@ -30,7 +30,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         }
         return studentRepository.save(student);
     }
-
+    //update students
     @Override
     public Student updateStudent(Student student, Integer id) {
         return studentRepository.findById(id).map(st ->{
@@ -42,6 +42,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         }).orElseThrow(() -> new StudentNotFoundException("sorry this student not found"));
     }
 
+    //get student by id
     @Override
     public Student getStudentById(Integer id) {
         return studentRepository.findById(id)
