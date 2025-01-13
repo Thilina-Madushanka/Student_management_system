@@ -5,18 +5,22 @@ import com.example.Student_Management_System_crud.exceptions.StudentNotFoundExce
 import com.example.Student_Management_System_crud.model.Student;
 import com.example.Student_Management_System_crud.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service //need to specify to service class
 //@RequiredArgsConstructor //inject dependencies to
 
+
 public class StudentService implements IStudentService{ //use code to @RequiredArgsConstructor
-    private final StudentRepository studentRepository; //get students from repository -> use @RequiredArgsConstructor
+//    private final StudentRepository studentRepository; //get students from repository -> use @RequiredArgsConstructor
 // constructor inject
-    public StudentService(StudentRepository studentRepository) { //manually initialize repository
-        this.studentRepository = studentRepository;
-    }
+@Autowired
+    private StudentRepository studentRepository;
+//    public StudentService(StudentRepository studentRepository) { //manually initialize repository
+//        this.studentRepository = studentRepository;
+//    }
 
     @Override
     public List<Student> getStudents() {

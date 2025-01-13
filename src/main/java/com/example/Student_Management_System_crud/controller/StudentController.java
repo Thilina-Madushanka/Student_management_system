@@ -10,10 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@CrossOrigin("http://localhost:3000")
-@RestController
-@RequestMapping("/students")
-//@RequiredArgsConstructor-to inject we use lombok -> need to use final keyword to class
+@CrossOrigin("http://localhost:3000")  //run in port number 3000 on google
+@RestController  //allows developers to focus on building RESTful endpoints without manually handling serialization.
+@RequestMapping("/students")  //supports defining request URL paths, HTTP methods, and other request parameters.
+//@RequiredArgsConstructor-   to inject we use lombok -> need to use final keyword to class
+
 public class StudentController {
 //    private final IStudentService studentService; //inject through the constructor -> need to use final keyword -> comming from //@RequiredArgsConstructor
 @Autowired //exists @RequiredArgsConstructor
@@ -25,7 +26,7 @@ private IStudentService studentService;
         return new ResponseEntity<>(studentService.getStudents(), HttpStatus.FOUND);
     }
     @PostMapping
-    public Student addStudent(@RequestBody Student student){
+    public Student addStudent(@RequestBody Student student){ //The @RequestBody annotation binds the HTTP request body (JSON payload) to the student parameter.
         return studentService.addStudent(student);
     }
     @PutMapping("/update/{id}")
