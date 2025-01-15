@@ -61,7 +61,7 @@ public class StudentService implements IStudentService{ //use code to @RequiredA
         }
         studentRepository.deleteById(id);
     }
-
+//find repository true or false
     private boolean studentAlreadyExists(String email) {
         return studentRepository.findByEmail(email).isPresent();
     }
